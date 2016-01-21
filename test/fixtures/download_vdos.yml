@@ -1,0 +1,14 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  video_name: MyString
+  ,url: 
+  uid: MyString
+  ,CURRENT_DATE: 2016-01-21 18:54:04
+
+two:
+  video_name: MyString
+  ,url: 
+  uid: MyString
+  ,CURRENT_DATE: 2016-01-21 18:54:04

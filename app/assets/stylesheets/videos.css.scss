@@ -1,0 +1,36 @@
+// Place all the styles related to the Videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#nav {
+/*     line-height:30px;
+    background-color:white; */
+   line-height:30px;
+    background-color:white;
+    height:330px;
+    width:100px;
+    float:left;
+    padding:10px;
+  text-align:center;
+ 
+}
+#section {
+/*     width:500px;
+  background-color:black; */
+   width:500px;
+  background-color:black;
+    float:left;
+    padding:1px; 
+   color:black;
+   text-align:center;
+ 
+}
+
+#footer {
+  line-height:30px;
+    background-color:#E0E0E0;
+    color:green;
+    clear:both;
+    text-align:center;
+   
+}
