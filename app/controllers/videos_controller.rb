@@ -242,7 +242,7 @@ if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
   #  puts video_name
   puts name.first
   file = name.first
-  system ("viddl-rb #{url} --save-dir ~/SocialiVideo/public/Video")
+  system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
     #remove name spaces with underscore
   #system ("mv ~/ecousin-tsp-fb/public/Video/'#{file}' ~/ecousin-tsp-fb/public/Video/'#{video_name}'")
    # query = "INSERT INTO download_vdos VALUES ('#{video_name}','#{url}','#{uid}');"
@@ -260,13 +260,13 @@ if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
               @localvdo.save
   
   puts "Finish Saving Local vdo #{video_name}"
-                  if File.exist?("~/SocialiVideo/public/Video/'#{video_name}'")
+                  if File.exist?("~/shrouded-reef-66672/resources/public/Video/'#{video_name}'")
                     puts "Sorry No File exist"
                 else
-                        system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh upload ~/SocialiVideo/public/Video/'#{video_name}' Public")
+                        system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh upload ~/shrouded-reef-66672/resources/public/Video/'#{video_name}' Public")
                               puts "Finish Uploading"
                     #delete the file after uploading
-                  system ("rm ~/SocialiVideo/public/Video/'#{video_name}'")
+                  system ("rm ~/shrouded-reef-66672/resources/public/Video/'#{video_name}'")
                 end
           
             
