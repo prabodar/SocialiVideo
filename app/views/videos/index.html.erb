@@ -13,23 +13,8 @@
 
             <% @uploader = User.find(video.user_id) %>
 
-
-            <div style="width:50%; margin:0 auto;">
-              <div id="nav">
-                <img src="http://images.clipartpanda.com/user-clipart-bcyogLKcL.png" alt="Mountain View" style="width:50px;height:50px">
-                <br>
-                <font color="blue" size="3"><%= link_to @uploader.name, @uploader %>
-                  <br> <%= video.created_at.strftime("%d %b. %Y") %> Playing from original links. </font></div>
-
-              <div id="section">
-                <p></p>
                 <iframe width="560" height="349" src="<%= video.url %>">     </iframe>
 
-                  </div>
-                <br>
-
-                <div id="footer"><br></div>
-              </div>
         <% end %>
 
 
