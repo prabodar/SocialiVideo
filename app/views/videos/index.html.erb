@@ -20,9 +20,8 @@
                 <font color="blue" size="3"><%= link_to @uploader.name, @uploader %>
                   <br> <%= localvideo.created_at.strftime("%d %b. %Y") %> Playing from original links. </font></div>
 
-              <div style="width:500px; height:250px;">
-    <%= render :partial => 'shared/youtube', :locals => { :url => localvideo.url }%>
-</div>
+              <iframe width="500" height="250" src="<%= localvideo.url %>" frameborder="0" allowfullscreen></iframe>
+              
                 <br>
 
                 <div id="footer"><br></div>
