@@ -246,6 +246,7 @@ class VideosController < ApplicationController
       file = name.first
 
       #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
+      system ("mkdir -p /app/app/assets/Video")
       system ("viddl-rb #{url} --save-dir /app/app/assets/Video")
       system ( "rename s/ /_/g /app/app/assets/Video/*")
 
