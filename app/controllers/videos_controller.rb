@@ -244,7 +244,7 @@ if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
   file = name.first
 
    #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
-   system ("viddl-rb #{url} --save-dir https://shrouded-reef-66672.herokuapp.com/public/Video")
+   system ("viddl-rb #{url} --save-dir /app/public/Video")
 
   #remove name spaces with underscore
   #system ("mv ~/ecousin-tsp-fb/public/Video/'#{file}' ~/ecousin-tsp-fb/public/Video/'#{video_name}'")
@@ -263,13 +263,13 @@ if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
               @localvdo.save
   
   puts "Finish Saving Local vdo #{video_name}"
-                  if File.exist?("https://shrouded-reef-66672.herokuapp.com/public/Video/'#{video_name}'")
+                  if File.exist?("~/app/public/Video/'#{video_name}'")
                     puts "Sorry No File exist"
                 else
-                        system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh upload https://shrouded-reef-66672.herokuapp.com/public/Video/'#{video_name}' Public")
+                        system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh upload /app/public/Video/'#{video_name}' Public")
                               puts "Finish Uploading"
                     #delete the file after uploading
-                  system ("rm ~/shrouded-reef-66672/resources/public/Video/'#{video_name}'")
+                  system ("rm /app/public/Video/'#{video_name}'")
                 end
           
             
