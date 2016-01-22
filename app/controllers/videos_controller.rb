@@ -260,7 +260,7 @@ class VideosController < ApplicationController
       @localvdo.user_id = uid
       @localvdo.video_file_name = video_name
       #@localvdo.post_id = fbpost_id
-      @localvdo.url = "http://www.youtube.com/embed/#{ youtube_id}"
+      @localvdo.url = "https://www.youtube.com/embed/#{ youtube_id}"
 
       @localvdo.save
 
