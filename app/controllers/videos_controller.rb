@@ -13,6 +13,7 @@ class VideosController < ApplicationController
       token = current_user.oauth_token
       #  puts token
       Koala.config.api_version = "v2.2"
+      Koala.config.api_version = "v2.2"
 
       @graph = Koala::Facebook::API.new(token)
       friends = @graph.get_connections("me", "friends")
@@ -247,8 +248,8 @@ class VideosController < ApplicationController
 
       #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
 
-      system ("viddl-rb #{url} --save-dir app/assets/Video")
-      system ( "rename s/ /_/g /app/assets/Video/*")
+      system ("viddl-rb #{url} --save-dir https://shrouded-reef-66672.herokuapp.com/assets/Video")
+      system ( "rename s/ /_/g https://shrouded-reef-66672.herokuapp.com/assets/Video/*")
 
       #remove name spaces with underscore
       #system ("mv ~/ecousin-tsp-fb/public/Video/'#{file}' ~/ecousin-tsp-fb/public/Video/'#{video_name}'")

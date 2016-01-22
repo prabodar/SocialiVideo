@@ -41,8 +41,8 @@
       <file leaf-file-name="videos_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/videos_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34941763">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.3577371">
+              <caret line="251" column="86" selection-start-line="251" selection-start-column="86" selection-end-line="251" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -52,17 +52,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/videos/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-15.625">
-              <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5555553">
-              <caret line="32" column="22" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="22" />
+              <caret line="25" column="81" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -823,7 +813,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5555553">
+        <state vertical-scroll-proportion="0.3327787">
           <caret line="32" column="22" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="22" />
           <folding />
         </state>
@@ -832,15 +822,15 @@
     <entry file="file://$PROJECT_DIR$/app/views/videos/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.625">
-          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+          <caret line="25" column="81" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="81" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/videos_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34941763">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.3577371">
+          <caret line="251" column="86" selection-start-line="251" selection-start-column="86" selection-end-line="251" selection-end-column="86" />
           <folding />
         </state>
       </provider>
