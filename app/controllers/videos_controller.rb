@@ -280,6 +280,10 @@ class VideosController < ApplicationController
 
   end
 
+  def youtube_video(url)
+    render :partial => 'shared/youtube', :locals => { :url => url }
+  end
+
 
   def fetch
     user_id = session[:user_id]

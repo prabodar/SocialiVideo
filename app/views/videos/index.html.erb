@@ -20,16 +20,8 @@
                 <font color="blue" size="3"><%= link_to @uploader.name, @uploader %>
                   <br> <%= localvideo.created_at.strftime("%d %b. %Y") %> Playing from original links. </font></div>
 
+              <%= youtube_video localvideo.url %>
 
-              <div id="section">
-
-                <div style="width:500px; height:250px;">
-                  <p hidden><%= v=localvideo.url + 'width="500px" height="300px" frameborder="0"></iframe>' %></p>
-
-                  <%= v.html_safe %>
-
-                </div>
-              </div>
                 <br>
 
                 <div id="footer"><br></div>
