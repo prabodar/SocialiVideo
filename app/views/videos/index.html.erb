@@ -13,7 +13,7 @@
 
             <% @uploader = User.find(video.user_id) %>
 
-
+        <% puts video.url %>
             <div style="width:50%; margin:0 auto;">
               <div id="nav">
                 <img src="http://images.clipartpanda.com/user-clipart-bcyogLKcL.png" alt="Mountain View" style="width:50px;height:50px">
@@ -23,7 +23,7 @@
 
               <div id="section">
                 <p></p>
-                <iframe width="500px" height="250px" src="<%= video.url %>">     </iframe>
+                <iframe width="500px" height="250px" src="https://www.youtube.com/embed/KKNs193wKIg">     </iframe>
 
                   </div>
                 <br>
