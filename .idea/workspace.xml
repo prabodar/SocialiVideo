@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="161c4bb2-9dd9-4e35-916e-aad187126cbb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/videos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/videos/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/videos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/videos_controller.rb" />
     </list>
     <ignored path="thesisecousin-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,20 +38,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="videos_controller.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="videos_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/videos_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.9722223">
-              <caret line="251" column="53" selection-start-line="251" selection-start-column="53" selection-end-line="251" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.3577371">
+              <caret line="251" column="31" selection-start-line="251" selection-start-column="31" selection-end-line="251" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/videos/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61174554">
+            <state vertical-scroll-proportion="-15.625">
               <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
               <folding />
             </state>
@@ -102,8 +102,8 @@
         <option value="$PROJECT_DIR$/app/views/videos/_youtube.html.erb.html" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/videos_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/videos/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/videos_controller.rb" />
       </list>
     </option>
   </component>
@@ -819,18 +819,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/videos_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/videos/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.9722223">
-          <caret line="251" column="53" selection-start-line="251" selection-start-column="53" selection-end-line="251" selection-end-column="53" />
+        <state vertical-scroll-proportion="-15.625">
+          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/videos/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/videos_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61174554">
-          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.3577371">
+          <caret line="251" column="31" selection-start-line="251" selection-start-column="31" selection-end-line="251" selection-end-column="31" />
           <folding />
         </state>
       </provider>
