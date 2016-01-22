@@ -10,19 +10,21 @@
 
         <% @uploader = User.find(video.user_id) %>
 
-        <% puts video.url %>
+
         <div style="width:50%; margin:0 auto;">
           <div id="nav">
             <img src="http://images.clipartpanda.com/user-clipart-bcyogLKcL.png" alt="Mountain View" style="width:50px;height:50px">
             <br>
             <font color="blue" size="3"><%= link_to @uploader.name, @uploader %>
-              <br> <%= video.created_at.strftime("%d %b. %Y") %> Playing from original links. </font></div>
+              <br> <%= video.created_at.strftime("%d %b. %Y") %> Playing from local server. </font></div>
 
           <div id="section">
-            <p></p>
+            <%= video.video_file_name %> <p></p>
 
-            <iframe width="500px" height="250px" src="<%= video.url %>">     </iframe>
+            <video width="500px" height="250px" controls>
 
+              <source src="<%= url_for video.video.url %>">
+            </video>
           </div>
           <br>
 
