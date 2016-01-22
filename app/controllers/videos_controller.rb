@@ -173,8 +173,8 @@ class VideosController < ApplicationController
       deleteVideo.each do |obj|
         name_of_video = Localvdo.find_by_post_id(obj).video_file_name
 
-        puts "Destroying Video from dropbox"
-        system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh delete /Public/'#{name_of_video}'")
+       # puts "Destroying Video from dropbox"
+      #  system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh delete /Public/'#{name_of_video}'")
         puts "Destroying video from Active record"
         dVideo = Localvdo.find_by_post_id(obj).destroy
         puts dVideo
@@ -246,8 +246,8 @@ class VideosController < ApplicationController
       file = name.first
 
       #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
-      system ("viddl-rb #{url} --save-dir /app/public/Video")
-      system ( "rename s/ /_/g /app/public/Video/*")
+      system ("viddl-rb #{url} --save-dir /app/app/assets/Video")
+      system ( "rename s/ /_/g /app/app/assets/Video/*")
 
       #remove name spaces with underscore
       #system ("mv ~/ecousin-tsp-fb/public/Video/'#{file}' ~/ecousin-tsp-fb/public/Video/'#{video_name}'")
@@ -265,14 +265,14 @@ class VideosController < ApplicationController
       @localvdo.save
 
       puts "Finish Saving Local vdo #{video_name}"
-      if File.exist?("~/app/public/Video/'#{video_name}'")
-        puts "Sorry No File exist"
-      else
-        system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh upload /app/public/Video/'#{video_name}' Public")
-        puts "Finish Uploading"
-        #delete the file after uploading
-        system ("rm /app/public/Video/'#{video_name}'")
-      end
+#      if File.exist?("~/app/public/Video/'#{video_name}'")
+#        puts "Sorry No File exist"
+#      else
+#        system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh upload /app/public/Video/'#{video_name}' Public")
+#        puts "Finish Uploading"
+#        #delete the file after uploading
+#        system ("rm /app/public/Video/'#{video_name}'")
+ #     end
 
 
     end
