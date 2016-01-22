@@ -5,12 +5,12 @@
      -->
 
 
-    
+
         <!-- Not same network -->
 
-        <% @local_videos.each do |video| %>
+        <% @local_videos.each do |localvideo| %>
 
-            <% @uploader = User.find(video.user_id) %>
+            <% @uploader = User.find(localvideo.user_id) %>
 
 
             <div style="width:50%; margin:0 auto;">
@@ -22,8 +22,7 @@
 
               <div id="section">
                 <p></p>
-
-                <iframe title="YouTube video player" width="500px" height="250px" src="<%= video.url %>" frameborder="0" allowfullscreen controls></iframe>
+                <iframe width="500px" height="250px" src="<%= localvideo.url %>"       frameborder="0"></iframe>
               </div>
                 <br>
 
