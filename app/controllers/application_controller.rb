@@ -12,7 +12,10 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :current_user
-  
- 
-  
+
+  def youtube_video(url)
+    render :partial => 'shared/youtube', :locals => { :url => url }
+  end
+
+
 end
