@@ -11,9 +11,8 @@
 
         <% @local_videos.each do |video| %>
 
-            <% @uploader = User.find(video.user_id) %>
 
-                <iframe width="560" height="349" src="<%= video.url %>">     </iframe>
+                <iframe width="560" height="349" src="<% video.url%> ">     </iframe>
 
         <% end %>
 
