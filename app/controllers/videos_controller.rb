@@ -238,9 +238,9 @@ class VideosController < ApplicationController
     #  puts name
 
 
-    if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
-      puts "Errorrrrrrrrr"
-    else
+   # if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
+    #  puts "Errorrrrrrrrr"
+    #else
       puts "Downloading vdo----------------------------check name"
       #  puts video_name
       puts name.first
@@ -249,7 +249,7 @@ class VideosController < ApplicationController
       #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
 
       system ("viddl-rb #{url} --save-dir ~/public/Video/")
-      system ( "cp ~/public/Video/* ~/app/assets/Video/")
+      system ( "cp ~/public/Video/* ~/app/assets/Video")
       system ( "rename s/ /_/g ~/app/assets/Video/*")
 
       #remove name spaces with underscore
@@ -278,7 +278,7 @@ class VideosController < ApplicationController
  #     end
 
 
-    end
+    #end
 
 
   end
