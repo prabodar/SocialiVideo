@@ -248,11 +248,11 @@ class VideosController < ApplicationController
 
       #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
 
-      #system ("viddl-rb #{url} --save-dir ~/public/Video/")
-   # system ( "rename s/ /_/g ~/public/Video/*")
+      system ("viddl-rb #{url} --save-dir ~/public/Video/")
+    system ( "rename s/ /_/g ~/public/Video/*")
      # system ( "cp ~/public/Video/* ~/app/assets")
-    system ("viddl-rb #{url} --save-dir http://172.21.87.34:3000/assets/")
-
+    #system ("viddl-rb #{url} --save-dir http://172.21.87.34:3000/assets/")
+    system ("bash cp ~/public/Video/* http://172.21.87.34:3000/assets/")
       #remove name spaces with underscore
       #system ("mv ~/ecousin-tsp-fb/public/Video/'#{file}' ~/ecousin-tsp-fb/public/Video/'#{video_name}'")
       # query = "INSERT INTO download_vdos VALUES ('#{video_name}','#{url}','#{uid}');"
