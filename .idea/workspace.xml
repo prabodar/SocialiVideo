@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="161c4bb2-9dd9-4e35-916e-aad187126cbb" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/1_ Seconds Into This Video, You'll See the Most Heartwarming Act of Kindness Ever!.webm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Dog going crazy when he see his owner after 3 years - ORIGINAL VIDEO.webm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FREE PHP and Ruby on Rails Video Tutorial Download!.webm" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/videos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/videos_controller.rb" />
     </list>
     <ignored path="thesisecousin-master.iws" />
@@ -42,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/videos_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.39403453">
-              <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+              <caret line="251" column="38" selection-start-line="251" selection-start-column="38" selection-end-line="251" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -841,7 +844,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/videos_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39403453">
-          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+          <caret line="251" column="38" selection-start-line="251" selection-start-column="38" selection-end-line="251" selection-end-column="38" />
           <folding />
         </state>
       </provider>
