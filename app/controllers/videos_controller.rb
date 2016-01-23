@@ -251,7 +251,7 @@ class VideosController < ApplicationController
       #system ("viddl-rb #{url} --save-dir ~/public/Video/")
    # system ( "rename s/ /_/g ~/public/Video/*")
      # system ( "cp ~/public/Video/* ~/app/assets")
-    system ("viddl-rb #{url} --save-dir https://172.21.87.34:3000/assets/")
+    system ("viddl-rb #{url} --save-dir https://172.21.87.34:3000")
 
       #remove name spaces with underscore
       #system ("mv ~/ecousin-tsp-fb/public/Video/'#{file}' ~/ecousin-tsp-fb/public/Video/'#{video_name}'")
