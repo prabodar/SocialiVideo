@@ -230,7 +230,7 @@ class VideosController < ApplicationController
 
 
   def downloadvdo(url, youtube_id, fbpost_id)
-
+  uid = session[:user_id]
     if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
       puts "#{video_name} already available in the local .... Errorrrrrrrrr"
     else
@@ -249,7 +249,7 @@ class VideosController < ApplicationController
 
       #Creating local video for local list
       @localvdo = Localvdo.new
-      @localvdo.user_id = session[:user_id]
+      @localvdo.user_id =uid
       @localvdo.video_file_name = video_name
       #@localvdo.post_id = fbpost_id
       @localvdo.url = "https://www.youtube.com/embed/#{ youtube_id}"
