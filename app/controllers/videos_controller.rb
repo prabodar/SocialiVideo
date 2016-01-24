@@ -239,9 +239,9 @@ class VideosController < ApplicationController
     #  puts name
 
 
-    if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
-      puts "Errorrrrrrrrr"
-    else
+  #  if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
+   #   puts "Errorrrrrrrrr"
+   # else
       puts "Downloading vdo----------------------------check name"
       #  puts video_name
       puts name.first
@@ -269,15 +269,15 @@ class VideosController < ApplicationController
 
 
       #Creating local video for local list
-      @localvdo = Localvdo.new
-      @localvdo.user_id = uid
-      @localvdo.video_file_name = video_name
+  #    @localvdo = Localvdo.new
+   #   @localvdo.user_id = uid
+  #    @localvdo.video_file_name = video_name
       #@localvdo.post_id = fbpost_id
-      @localvdo.url = "https://www.youtube.com/embed/#{ youtube_id}"
+   #   @localvdo.url = "https://www.youtube.com/embed/#{ youtube_id}"
 
-      @localvdo.save
+   #   @localvdo.save
 
-      puts "Finish Saving Local vdo #{video_name}"
+   #   puts "Finish Saving Local vdo #{video_name}"
 #      if File.exist?("~/app/public/Video/'#{video_name}'")
 #        puts "Sorry No File exist"
 #      else
