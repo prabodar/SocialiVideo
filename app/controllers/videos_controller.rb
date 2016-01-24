@@ -260,10 +260,13 @@ class VideosController < ApplicationController
       hostname = '192.168.12.10'
       port = 2000
 
-      tcp_client = TCPSocket.new( hostname, port )
-      tcp_client.write( 'Z' )
-      tcp_client.send( "Z\r\n",0 )
-      tcp_client.flush
+      s = TCPSocket.open(hostname, port)
+
+      while line = s.gets   # Read lines from the socket
+        puts line.chop      # And print with platform line terminator
+      end
+      s.close
+
 
       #Creating local video for local list
       @localvdo = Localvdo.new
