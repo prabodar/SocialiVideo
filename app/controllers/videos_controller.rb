@@ -260,7 +260,7 @@ class VideosController < ApplicationController
       hostname = '192.168.12.10'
       port = 2000
 
-      tcp_client = TCPSocket.new( ipaddr, port )
+      tcp_client = TCPSocket.new( hostname, port )
       tcp_client.write( 'Z' )
       tcp_client.send( "Z\r\n",0 )
       tcp_client.flush
