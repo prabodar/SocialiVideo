@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 require 'viddl-rb'
-require 'socket'      # Sockets are in standard library
+require 'socket' # Sockets are in standard library
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
@@ -175,8 +175,8 @@ class VideosController < ApplicationController
       deleteVideo.each do |obj|
         name_of_video = Localvdo.find_by_post_id(obj).video_file_name
 
-       # puts "Destroying Video from dropbox"
-      #  system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh delete /Public/'#{name_of_video}'")
+        # puts "Destroying Video from dropbox"
+        #  system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh delete /Public/'#{name_of_video}'")
         puts "Destroying video from Active record"
         dVideo = Localvdo.find_by_post_id(obj).destroy
         puts dVideo
@@ -230,68 +230,35 @@ class VideosController < ApplicationController
 
 
   def downloadvdo(url, youtube_id, fbpost_id)
-    #video_id_list = Localvdo.pluck(:post_id)
-    #if fbpost_id
-    uid = session[:user_id]
-    name = ViddlRb.get_names(url)
 
-    video_name = name.first.split.join('_')
-    #  puts name
-
-
-  #  if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
-   #   puts "Errorrrrrrrrr"
-   # else
-      puts "Downloading vdo----------------------------check name"
-      #  puts video_name
-      puts name.first
-      file = name.first
-
-      #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
-      #system ("bash <(curl -s http://192.168.12.10/rubyex.sh)")
-      #system ("viddl-rb #{url} --save-dir ~/public/Video/")
-        #system ( "rename s/ /_/g ~/public/Video/*")
-
-      #remove name spaces with underscore
-      #system ("mv ~/ecousin-tsp-fb/public/Video/'#{file}' ~/ecousin-tsp-fb/public/Video/'#{video_name}'")
-      # query = "INSERT INTO download_vdos VALUES ('#{video_name}','#{url}','#{uid}');"
-      #  ActiveRecord::Base.connection.execute(query);
+    if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
+      puts "#{video_name} already available in the local .... Errorrrrrrrrr"
+    else
+      puts "Downloading video----------------------------check name"
+      puts video_name
+      #puts name.first
 
       hostname = session[:user_ip]
       port = 2000
 
-    s = TCPSocket.open(hostname, port)
-    s.puts(url)  # Send the time to the client
-    while line = s.gets   # Read lines from the socket
-      puts line.chop      # And print with platform line terminator
-    end
-
+      s = TCPSocket.open(hostname, port)
+      s.puts(url) # Send the time to the client
+      while line = s.gets # Read lines from the socket
+        puts line.chop # And print with platform line terminator
+      end
 
       #Creating local video for local list
-  #    @localvdo = Localvdo.new
-   #   @localvdo.user_id = uid
-  #    @localvdo.video_file_name = video_name
-      #@localvdo.post_id = fbpost_id
-   #   @localvdo.url = "https://www.youtube.com/embed/#{ youtube_id}"
+      @localvdo = Localvdo.new
+      @localvdo.user_id = uid
+      @localvdo.video_file_name = video_name
+      @localvdo.post_id = fbpost_id
+      @localvdo.url = "https://www.youtube.com/embed/#{ youtube_id}"
 
-   #   @localvdo.save
+      @localvdo.save
 
-   #   puts "Finish Saving Local vdo #{video_name}"
-#      if File.exist?("~/app/public/Video/'#{video_name}'")
-#        puts "Sorry No File exist"
-#      else
-#        system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh upload /app/public/Video/'#{video_name}' Public")
-#        puts "Finish Uploading"
-#        #delete the file after uploading
-#        system ("rm /app/public/Video/'#{video_name}'")
- #     end
-
-
- #   end
-
-
+      puts "Download finished #{video_name} #{session[:user_ip]}"
+    end
   end
-
 
 
   def fetch
