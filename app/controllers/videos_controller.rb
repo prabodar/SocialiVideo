@@ -249,9 +249,9 @@ class VideosController < ApplicationController
 
       #Creating local video for local list
       @localvdo = Localvdo.new
-      @localvdo.user_id = uid
+      @localvdo.user_id = session[:user_id]
       @localvdo.video_file_name = video_name
-      @localvdo.post_id = fbpost_id
+      #@localvdo.post_id = fbpost_id
       @localvdo.url = "https://www.youtube.com/embed/#{ youtube_id}"
 
       @localvdo.save
