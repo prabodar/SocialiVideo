@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 require 'viddl-rb'
+require 'socket'      # Sockets are in standard library
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
