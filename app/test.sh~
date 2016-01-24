@@ -1,0 +1,3 @@
+#!/bin/sh
+
+viddl-rb $param1

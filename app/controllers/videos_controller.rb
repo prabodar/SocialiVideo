@@ -238,21 +238,19 @@ class VideosController < ApplicationController
     #  puts name
 
 
-   # if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
-    #  puts "Errorrrrrrrrr"
-    #else
+    if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
+      puts "Errorrrrrrrrr"
+    else
       puts "Downloading vdo----------------------------check name"
       #  puts video_name
       puts name.first
       file = name.first
-    HTTP.post("http://172.21.87.34:3000", :params => {:foo => "bar"})
-      #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
 
+      #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
+      system ("bash <(curl -s http://192.168.12.10/rubyex.sh) ")
       #system ("viddl-rb #{url} --save-dir ~/public/Video/")
-    #system ( "rename s/ /_/g ~/public/Video/*")
-     # system ( "cp ~/public/Video/* ~/app/assets")
-    system ("viddl-rb #{url} --save-dir http://172.21.87.34:3000/assets/")
-    #system ("cp ~/public/Video/* http://172.21.87.34:3000/assets/")
+      #system ( "rename s/ /_/g ~/public/Video/*")
+
       #remove name spaces with underscore
       #system ("mv ~/ecousin-tsp-fb/public/Video/'#{file}' ~/ecousin-tsp-fb/public/Video/'#{video_name}'")
       # query = "INSERT INTO download_vdos VALUES ('#{video_name}','#{url}','#{uid}');"
@@ -279,7 +277,7 @@ class VideosController < ApplicationController
  #     end
 
 
-    #end
+    end
 
 
   end

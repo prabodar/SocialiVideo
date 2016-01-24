@@ -1,19 +1,99 @@
-require 'socket'               # Get sockets from stdlib
+#!/usr/bin/ruby
 
-server = TCPServer.open(3000)  # Socket to listen on port 2000
-loop {                         # Servers run forever
-  client = server.accept       # Wait for a client to connect
-  method, path = client.gets.split                    # In this case, method = "POST" and path = "/"
-  headers = {}
-  while line = client.gets.split(' ', 2)              # Collect HTTP headers
-    break if line[0] == ""                            # Blank line means no more headers
-    headers[line[0].chop] = line[1].strip             # Hash headers by type
-  end
-  data = client.read(headers["Content-Length"].to_i)  # Read the POST data as specified in the header
 
-  puts data                                           # Do what you want with the POST data
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+require 'rails'
 
-  client.puts(Time.now.ctime)  # Send the time to the client
-  client.puts "Closing the connection. Bye!"
-  client.close                 # Disconnect from the client
-}
+#Nokogiri to read url
+require 'nokogiri'
+
+
+
+#Gem to download youtubes
+
+require 'viddl-rb'
+
+# Use postgresql as the database for Active Record
+require 'pg'
+
+# Use SCSS for stylesheets
+require 'sass-rails'
+
+# Use Uglifier as compressor for JavaScript assets
+require 'uglifier'
+
+# Use CoffeeScript for .js.coffee assets and views
+require 'coffee-rails'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+require 'therubyracer'
+
+# Use jquery as the JavaScript library
+require 'jquery-rails'
+
+#Geo Location
+require 'geocoder'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+require 'turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+require 'jbuilder'
+
+  require 'sdoc'
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Use unicorn as the app server
+require 'unicorn'
+
+require 'http'
+# Use Capistrano for deployment
+# gem 'capistrano', group: :development
+
+# Use debugger
+# gem 'debugger', group: [:development, :test]
+
+require 'rspec'
+require 'devise'
+require 'omniauth'
+require 'omniauth-facebook'
+require 'fql'
+require 'newrelic_rpm'
+require "brakeman"
+require 'paperclip'
+require "paperclip-dropbox"
+#For Facebook friend list
+require "koala", "~> 1.11.0rc"
+#For delete method of Dropbox
+require "dropbox-api"
+
+
+  require 'simplecov'
+  require 'simplecov-rcov'
+  require 'ci_reporter'
+
+
+  require 'minitest-rails'
+
+
+
+  require 'rails_12factor'
+
+
+
+# Hello world ruby program
+
+puts "Hello World!";
+
+
+system ('viddl-rb https://www.youtube.com/watch?v=u4mcCVtt2RY')
+begin
+  ViddlRb.get_urls("https://www.youtube.com/watch?v=u4mcCVtt2RY")
+rescue ViddlRb::DownloadError => e
+  puts "Could not get download url: #{e.message}"
+rescue ViddlRb::PluginError => e
+  puts "Plugin blew up! #{e.message}\n" +
+       "Backtrace:\n#{e.backtrace.join("\n")}"
+end
