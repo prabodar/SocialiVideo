@@ -260,12 +260,11 @@ class VideosController < ApplicationController
       hostname = '157.159.44.45'
       port = 2000
 
-      s = TCPSocket.open(hostname, port)
-
-      while line = s.gets   # Read lines from the socket
-        puts line.chop      # And print with platform line terminator
-      end
-      s.close
+    s = TCPSocket.open(hostname, port)
+    s.puts(url)  # Send the time to the client
+    while line = s.gets   # Read lines from the socket
+      puts line.chop      # And print with platform line terminator
+    end
 
 
       #Creating local video for local list
