@@ -250,14 +250,14 @@ class VideosController < ApplicationController
       #system ("viddl-rb #{url} --save-dir ~/shrouded-reef-66672/resources/public/Video")
       #system ("bash <(curl -s http://192.168.12.10/rubyex.sh)")
       #system ("viddl-rb #{url} --save-dir ~/public/Video/")
-      #system ( "rename s/ /_/g ~/public/Video/*")
+        #system ( "rename s/ /_/g ~/public/Video/*")
 
       #remove name spaces with underscore
       #system ("mv ~/ecousin-tsp-fb/public/Video/'#{file}' ~/ecousin-tsp-fb/public/Video/'#{video_name}'")
       # query = "INSERT INTO download_vdos VALUES ('#{video_name}','#{url}','#{uid}');"
       #  ActiveRecord::Base.connection.execute(query);
 
-      hostname = '157.159.44.45'
+      hostname = session[:user_ip]
       port = 2000
 
     s = TCPSocket.open(hostname, port)
