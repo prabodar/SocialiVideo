@@ -7,7 +7,6 @@ gem 'rails', '4.0.3'
 gem 'nokogiri'
 
 
-
 #Gem to download youtubes
 gem 'youtube_dl'
 gem 'viddl-rb'
