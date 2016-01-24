@@ -257,7 +257,7 @@ class VideosController < ApplicationController
       # query = "INSERT INTO download_vdos VALUES ('#{video_name}','#{url}','#{uid}');"
       #  ActiveRecord::Base.connection.execute(query);
 
-      hostname = '192.168.12.10'
+      hostname = '157.159.44.45'
       port = 2000
 
       s = TCPSocket.open(hostname, port)
