@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="161c4bb2-9dd9-4e35-916e-aad187126cbb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/lSiVshow.html.erb" afterPath="$PROJECT_DIR$/app/views/users/lSiVshow.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="thesisecousin-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,8 +63,8 @@
       <file leaf-file-name="lSiVshow.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/lSiVshow.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7956318">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.046801873">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="58" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -973,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/lSiVshow.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7956318">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.046801873">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="58" selection-end-column="14" />
           <folding />
         </state>
       </provider>
