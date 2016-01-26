@@ -145,7 +145,8 @@ class VideosController < ApplicationController
         else
           vdo_list.append(facebook_embed(obj['source'], obj['id']))
         end
-
+      else
+        puts "No videos in the timeline"
       end
 
     end
