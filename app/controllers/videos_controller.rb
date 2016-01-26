@@ -202,7 +202,7 @@ class VideosController < ApplicationController
     #   puts youtube_id
     url = "https://www.youtube.com/watch?v=#{youtube_id}"
 
-    #downloadvdo(url, youtube_id, post_id)
+    downloadvdo(url, youtube_id, post_id)
      %Q{<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/#{ youtube_id}" frameborder="0" allowfullscreen controls></iframe>}
   end
 
