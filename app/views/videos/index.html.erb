@@ -9,7 +9,7 @@
      -->
 
     <!-- Not same network -->
-
+    <% if current_user.city == "Évry" %>
     <% @local_videos.each do |video| %>
 
         <% @uploader = User.find(video.user_id) %>
@@ -37,6 +37,7 @@
     <% end %>
 
 
+    <% else %>
     <% @local_videos.each do |video| %>
 
             <% @uploader = User.find(video.user_id) %>
@@ -95,7 +96,7 @@
         <% end %>
 
 
-
+        <% end %>
 
 
 <% else %>
