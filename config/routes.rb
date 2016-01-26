@@ -71,7 +71,6 @@ EcousinTspFb::Application.routes.draw do
   match 'timelinevdo', to: 'videos#timelinevdo', via: [:get]
   match 'upload', to: 'videos#upload', via: [:get, :post]
   match 'timelinevdo/#', to: 'videos#downloadvdo', via: [:get]
-  match 'sivvideo', to: 'users#index', via: [:get]
 
   
 end
