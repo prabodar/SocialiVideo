@@ -78,7 +78,8 @@ class LocalvdosController < ApplicationController
   # DELETE /localvdos/1
   # DELETE /localvdos/1.json
   def destroy
-    deleted_url = @localvdo.video.url  
+    deleted_url = @localvdo.video.url
+    puts "Distroying video name " +@localvdo.name
     vdo_obj = Video.where(local_link: deleted_url).all
     vdo_obj.each do |vdo|
       vdo.inLocal = false

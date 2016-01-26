@@ -104,6 +104,7 @@ class VideosController < ApplicationController
   def destroy
     @user = User.find(session[:user_id])
     @video.destroy
+  puts "Distroying video"
     respond_to do |format|
       format.html { redirect_to @user }
       format.json { head :no_content }
