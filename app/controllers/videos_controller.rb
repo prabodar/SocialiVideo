@@ -230,9 +230,9 @@ class VideosController < ApplicationController
 
 
   def downloadvdo(url, youtube_id, fbpost_id)
-  uid = session[:user_id]
-  name = ViddlRb.get_names(url)
-  video_name = name.first.split.join('_')
+    uid = session[:user_id]
+    name = ViddlRb.get_names(url)
+    video_name = name.first.split.join('_')
     if Localvdo.exists?(:user_id => uid, :video_file_name => video_name)
       puts "#{video_name} already available in the local .... Errorrrrrrrrr"
     else
