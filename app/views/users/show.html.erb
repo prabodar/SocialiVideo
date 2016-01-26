@@ -1,5 +1,60 @@
 <div style="width:100%; height:100px;"></div>
 
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @user.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @user.location %>
+</p>
+
+<% if admin_signed_in? or @user.id == session[:user_id]%>
+
+    <p>
+      <strong>Facebook ID:</strong>
+      <%= @user.uid %>
+    </p>
+
+    <p>
+      <strong>IP Address:</strong>
+      <%= @user.ip_address %>
+    </p>
+
+<% end %>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @user.created_at %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @user.updated_at %>
+</p>
+
+<% if @user.id == session[:user_id] %>
+    <%= link_to 'Upload New Videos', new_localvdo_path %> <br/>
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
+<%= link_to 'Back', users_path %>
+
+
 <table >
   <tr>
     <td>
@@ -29,6 +84,9 @@
         <% end %>
         </tbody>
       </table>
+
+    </td>
+    <td>
 
       <h1><%= @user.name %> Facebook Shared Videos</h1>
 
@@ -64,62 +122,6 @@
 
 
 
-    </td>
-    <td>
-
-
-
-      <p id="notice"><%= notice %></p>
-
-      <p>
-        <strong>ID:</strong>
-        <%= @user.id %>
-      </p>
-
-      <p>
-        <strong>Name:</strong>
-        <%= @user.name %>
-      </p>
-
-      <p>
-        <strong>Email:</strong>
-        <%= @user.email %>
-      </p>
-
-      <p>
-        <strong>Location:</strong>
-        <%= @user.location %>
-      </p>
-
-      <% if admin_signed_in? or @user.id == session[:user_id]%>
-
-          <p>
-            <strong>Facebook ID:</strong>
-            <%= @user.uid %>
-          </p>
-
-          <p>
-            <strong>IP Address:</strong>
-            <%= @user.ip_address %>
-          </p>
-
-      <% end %>
-
-      <p>
-        <strong>Updated at:</strong>
-        <%= @user.created_at %>
-      </p>
-
-      <p>
-        <strong>Created at:</strong>
-        <%= @user.updated_at %>
-      </p>
-
-      <% if @user.id == session[:user_id] %>
-          <%= link_to 'Upload New Videos', new_localvdo_path %> <br/>
-          <%= link_to 'Edit', edit_user_path(@user) %> |
-      <% end %>
-      <%= link_to 'Back', users_path %>
 
 
 
