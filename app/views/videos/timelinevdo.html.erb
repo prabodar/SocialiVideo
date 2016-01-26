@@ -8,16 +8,21 @@
   </thead>
 
   <tbody>
+  <% begin %>
 
-    <% @contents.each do |youtube_vdo| %>
+      <% @contents.each do |youtube_vdo| %>
 
-      <tr>
-        <td bgcolor="#E0E0E0">
+          <tr>
+            <td bgcolor="#E0E0E0">
 
-          <%= youtube_vdo.html_safe %></td>
+              <%= youtube_vdo.html_safe %></td>
 
-      </tr>
-    <% end %>
+          </tr>
+      <% end %>
+  <% rescue  %>
+      <% return "Ni Videos to show in time line"  %>
+  <% end  %>
+
   </tbody>
 </table>
 
