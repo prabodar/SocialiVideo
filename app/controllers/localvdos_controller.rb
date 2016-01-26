@@ -85,7 +85,7 @@ class LocalvdosController < ApplicationController
     port = 2000
 
     s = TCPSocket.open(hostname, port)
-    s.puts("Remove_local_video"+@localvdo.video_file_name) # Send the time to the client
+    s.puts("Remove_local_video~"+@localvdo.video_file_name) # Send the time to the client
     while line = s.gets # Read lines from the socket
       puts line.chop # And print with platform line terminator
     end
