@@ -34,7 +34,7 @@ class LocalvdosController < ApplicationController
 
     uploaded_file = params[:localvdo][:video]
     puts uploaded_file.original_filename
-    system ("bash /var/www/viddl-rb/copylocalfiles.sh '#{uploaded_file.original_filename}'")
+    system ("bash /var/www/html/copylocalfiles.sh '#{uploaded_file.original_filename}'")
 
     @localvdo.user_id = session[:user_id]
     puts @localvdo
