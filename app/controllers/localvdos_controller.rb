@@ -34,6 +34,7 @@ class LocalvdosController < ApplicationController
 
     uploaded_file = params[:localvdo][:video]
     puts uploaded_file.original_filename
+    
     system ("cp /home/#USERNAME/'#{uploaded_file.original_filename}' /var/www/html/")
     system ( "rename 's/ /_/g' /var/www/html/*")
     @localvdo.user_id = session[:user_id]
