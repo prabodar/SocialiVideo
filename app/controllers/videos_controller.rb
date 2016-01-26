@@ -203,7 +203,7 @@ class VideosController < ApplicationController
     url = "https://www.youtube.com/watch?v=#{youtube_id}"
 
     downloadvdo(url, youtube_id, post_id)
-    %Q{<iframe width="500" height="250" src="https://www.youtube.com/embed#{ youtube_id}" frameborder="0" allowfullscreen></iframe>}
+    %Q{<iframe width="500" height="250" src="https://www.youtube.com/embed/#{ youtube_id}" frameborder="0" allowfullscreen></iframe>}
 
   end
 
