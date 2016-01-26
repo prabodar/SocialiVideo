@@ -5,11 +5,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>ID:</strong>
-  <%= @user.id %>
-</p>
-
-<p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
@@ -50,15 +45,7 @@
 
 <% if @user.id == session[:user_id] %>
     <%= link_to 'Upload New Videos', new_localvdo_path %> <br/>
-    <%= link_to 'Edit', edit_user_path(@user) %> |
 <% end %>
-<%= link_to 'Back', users_path %>
-
-
-<table >
-  <tr>
-    <td>
-
 
       <h1><%= @user.name %> LSiV Uploaded Videos</h1>
 
@@ -84,9 +71,6 @@
         <% end %>
         </tbody>
       </table>
-
-    </td>
-    <td>
 
       <h1><%= @user.name %> Facebook Shared Videos</h1>
 
@@ -119,12 +103,3 @@
       <br>
 
 
-
-
-
-
-
-
-    </td>
-  </tr>
-</table>
