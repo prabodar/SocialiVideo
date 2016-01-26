@@ -111,81 +111,87 @@ class VideosController < ApplicationController
   end
 
   def timelinevdo
-    vdo_list = []
-    user_id = session[:user_id]
-    puts user_id
-    user_obj = User.find(user_id)
-    url = 'https://graph.facebook.com/v2.0/' + user_obj.uid + '?fields=posts&access_token=' + user_obj.oauth_token
-    puts url
-    raw_data = open(url).read
-    #  puts raw_data
-    json_data = JSON.parse(raw_data)
-    puts json_data
-    json_data['posts']['data'].each do |obj|
+    begin
+      vdo_list = []
+      user_id = session[:user_id]
+      puts user_id
+      user_obj = User.find(user_id)
+      url = 'https://graph.facebook.com/v2.0/' + user_obj.uid + '?fields=posts&access_token=' + user_obj.oauth_token
+      puts url
+      raw_data = open(url).read
+      #  puts raw_data
+      json_data = JSON.parse(raw_data)
+      puts json_data
+      json_data['posts']['data'].each do |obj|
 
-      if obj['type'] == "swf" || obj['type']== "video" || obj['type']== "link"
+        if obj['type'] == "swf" || obj['type']== "video" || obj['type']== "link"
 
-        puts obj['id']
-        # puts obj['application']['name']
+          puts obj['id']
+          # puts obj['application']['name']
 
 
-        if obj['link'].include? "www.youtube.com"
+          if obj['link'].include? "www.youtube.com"
 
-          vdo_list.append(youtube_embed(obj['link'], obj['id']))
+            vdo_list.append(youtube_embed(obj['link'], obj['id']))
 
-        elsif obj['source'].include? "www.youtube.com"
-          #puts obj
+          elsif obj['source'].include? "www.youtube.com"
+            #puts obj
 
-          vdo_list.append(youtube_embed(obj['source'], obj['id']))
+            vdo_list.append(youtube_embed(obj['source'], obj['id']))
 
-        elsif obj['source'].include? "vimeo.com"
-          #  puts "NOT youtube"
-          #  puts obj['source']
-          vdo_list.append(vimeo_embed(obj['source'], obj['id']))
+          elsif obj['source'].include? "vimeo.com"
+            #  puts "NOT youtube"
+            #  puts obj['source']
+            vdo_list.append(vimeo_embed(obj['source'], obj['id']))
+          else
+            vdo_list.append(facebook_embed(obj['source'], obj['id']))
+          end
         else
-          vdo_list.append(facebook_embed(obj['source'], obj['id']))
-        end
-      else
-        puts "No videos in the timeline"
-      end
-
-    end
-
-
-    #  listOne= Localvdo.pluck(:post_id)
-    listOne = Array.new
-    listTwo = Array.new
-    #Detection of deleted videos
-    json_data['posts']['data'].each do |obj|
-      if obj['type'] == "swf" || obj['type']== "video"|| obj['type'] == "link"
-
-        if obj['link'].include? "www.youtube.com"
-          listTwo.append(obj['id'])
-          puts obj['id']
-        elsif obj['source'].include? "www.youtube.com"
-          listTwo.append(obj['id'])
-          puts obj['id']
+          puts "No videos in the timeline"
         end
 
       end
-    end
-    deleteVideo = listOne - listTwo
-    puts "Deleted Videoooooooooooooooo"
-    puts deleteVideo
-    if deleteVideo
-      deleteVideo.each do |obj|
-        name_of_video = Localvdo.find_by_post_id(obj).video_file_name
 
-        # puts "Destroying Video from dropbox"
-        #  system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh delete /Public/'#{name_of_video}'")
-        puts "Destroying video from Active record"
-        dVideo = Localvdo.find_by_post_id(obj).destroy
-        puts dVideo
-        #  @client = Dropbox::API::Client.new(:token  => "pa8g47kzltdus4a1", :secret => "fwno07n27l1f6ii")
-        #  client.destroy "#{name_of_video}"
+
+      #  listOne= Localvdo.pluck(:post_id)
+      listOne = Array.new
+      listTwo = Array.new
+      #Detection of deleted videos
+      json_data['posts']['data'].each do |obj|
+        if obj['type'] == "swf" || obj['type']== "video"|| obj['type'] == "link"
+
+          if obj['link'].include? "www.youtube.com"
+            listTwo.append(obj['id'])
+            puts obj['id']
+          elsif obj['source'].include? "www.youtube.com"
+            listTwo.append(obj['id'])
+            puts obj['id']
+          end
+
+        end
       end
+      deleteVideo = listOne - listTwo
+      puts "Deleted Videoooooooooooooooo"
+      puts deleteVideo
+      if deleteVideo
+        deleteVideo.each do |obj|
+          name_of_video = Localvdo.find_by_post_id(obj).video_file_name
+
+          # puts "Destroying Video from dropbox"
+          #  system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh delete /Public/'#{name_of_video}'")
+          puts "Destroying video from Active record"
+          dVideo = Localvdo.find_by_post_id(obj).destroy
+          puts dVideo
+          #  @client = Dropbox::API::Client.new(:token  => "pa8g47kzltdus4a1", :secret => "fwno07n27l1f6ii")
+          #  client.destroy "#{name_of_video}"
+        end
+      end
+      @contents = vdo_list
+    rescue
+      return "Problem expanding link"
     end
-    @contents = vdo_list
+
+
   end
 
   #YouTube Detection
