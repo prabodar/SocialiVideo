@@ -31,7 +31,10 @@ class LocalvdosController < ApplicationController
     @localvdo = Localvdo.new(localvdo_params)
     puts "Creatingggggg localvdoooo"
     puts localvdo_params
-    puts params[:video].original_filename
+
+    uploaded_file = params[:localvdo][:video]
+    puts uploaded_file.original_filename
+
     @localvdo.user_id = session[:user_id]
     puts @localvdo
    # system ("bash ~/Dropbox-Uploader/dropbox_uploader.sh delete /Public/'#{name_of_video}'")
