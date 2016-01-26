@@ -32,7 +32,7 @@
         <td align="center" bgcolor="#E0E0E0"><%= link_to 'Show', user %></td>
         <% if user.id == session[:user_id] %>
           <td align="center" ><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td align="center" ><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td align="center" ><%= link_to 'Destroy', user, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

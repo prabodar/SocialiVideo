@@ -80,6 +80,17 @@ class LocalvdosController < ApplicationController
   def destroy
     deleted_url = @localvdo.video.url
     puts "Distroying video name " +@localvdo.video_file_name
+
+    hostname = session[:user_ip]
+    port = 2000
+
+    s = TCPSocket.open(hostname, port)
+    s.puts("Remove_local_video"+@localvdo.video_file_name) # Send the time to the client
+    while line = s.gets # Read lines from the socket
+      puts line.chop # And print with platform line terminator
+    end
+
+
     vdo_obj = Video.where(local_link: deleted_url).all
     vdo_obj.each do |vdo|
       vdo.inLocal = false
