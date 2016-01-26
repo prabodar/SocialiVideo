@@ -34,7 +34,16 @@ class LocalvdosController < ApplicationController
 
     uploaded_file = params[:localvdo][:video]
     puts uploaded_file.original_filename
-    system ("bash /var/www/html/copylocalfiles.sh '#{uploaded_file.original_filename}'")
+   # system ("bash /var/www/html/copylocalfiles.sh '#{uploaded_file.original_filename}'")
+
+    hostname = session[:user_ip]
+    port = 2000
+
+    s = TCPSocket.open(hostname, port)
+    s.puts("local_video_filename~"+uploaded_file.original_filename) # Send the time to the client
+    while line = s.gets # Read lines from the socket
+      puts line.chop # And print with platform line terminator
+    end
 
     @localvdo.user_id = session[:user_id]
     puts @localvdo
