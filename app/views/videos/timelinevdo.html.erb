@@ -10,14 +10,32 @@
   <tbody>
 
     <% @contents.each do |youtube_vdo| %>
+      <div style="width:50%; margin:0 auto;">
+        <div id="nav">
+          <img src="http://images.clipartpanda.com/user-clipart-bcyogLKcL.png" alt="Mountain View" style="width:50px;height:50px">
+          <br>
+</div>
+
+        <div id="section">
+          <%= video.name %> <p></p>
+          <div style="width:500px; height:250px;">
+            <%= youtube_vdo%>
+            <%= youtube_vdo.html_safe %></td>
+
+          </div>
+        </div>
+        <br>
+
+        <div id="footer"><br></div>
+      </div>
+
 
       <tr>
         <td bgcolor="#E0E0E0">
 
 
 
-          <%= youtube_vdo%>
-          <%= youtube_vdo.html_safe %></td>
+
 
       </tr>
     <% end %>
