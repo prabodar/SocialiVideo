@@ -68,7 +68,7 @@
             <tr>
               <td valign="middle" align="center" bgcolor="#E0E0E0"><%= localvdo.video.original_filename %></td>
               <td valign="middle" align="center" bgcolor="#E0E0E0"><%= video_tag localvdo.video.url, :size => "100x100" %></td>
-              <td><%= link_to 'Show', video_tag localvdo.video.url %></td>
+              <td><%= link_to 'Show', localvdo.url %></td>
               <% if localvdo.user_id == session[:user_id] %>
                   <td><%= link_to 'Edit', edit_localvdo_path(localvdo) %></td>
                   <td><%= link_to 'Destroy', localvdo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
